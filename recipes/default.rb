@@ -43,6 +43,7 @@ elsif apt_packaging
 
   dpkg_package "typesafe-stack" do
     source "http://apt.typesafe.com/repo-deb-build-0002.deb"
+    package_name "repo-deb-build-0002"
     action :install
   end
 end
