@@ -41,18 +41,11 @@ if yum_packaging
 
 elsif apt_packaging
 
-  # Add the DEB/APT Repository
-  apt_repository "typesafe" do
-    uri "http://apt.typesafe.com/"
-    distribution "unicorn"
-    components ["main"]
-    #key "https://somewhere.typesafe.com/.../typesafe-repo-public.asc" # there is no official web site to download this key.
-    key "typesafe-repo-public.asc" # The public key of this repository is packaged in the cookbook
-    action :add
+  dpkg_package "typesafe-stack" do
+    source "http://apt.typesafe.com/repo-deb-build-0002.deb"
+    action :install
   end
-
 end
-
 # Install "all" (sbt + g8) 
 package "typesafe-stack"
 
