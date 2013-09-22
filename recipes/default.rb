@@ -41,7 +41,7 @@ if yum_packaging
 
 elsif apt_packaging
 
-  dpkg_package "typesafe-stack" do
+  dpkg_package "typesafe-repo" do
     source "http://apt.typesafe.com/repo-deb-build-0002.deb"
     package_name "typesafe-repo"
     action :install
